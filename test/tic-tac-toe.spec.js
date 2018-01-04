@@ -1200,6 +1200,20 @@ describe('TicTacToe', () => {
     });
     describe('#isDraw', () => {
         it('should return false if game is not finished or there is a winner, and true if it is a draw', () => {
+            const game = new TicTacToe();
+            game.nextTurn(1, 1);
+            game.nextTurn(0, 0);
+            game.nextTurn(0, 1);
+            game.nextTurn(1, 2);
+            game.nextTurn(0, 2);
+            game.nextTurn(2, 1);
+            game.nextTurn(1, 0);
+            game.nextTurn(2, 2);
+            game.nextTurn(0, 1);
+            game.nextTurn(2, 0);
+            expect(game.isDraw()).to.equal(false);
+        });
+        it('should return false if game is not finished or there is a winner, and true if it is a draw', () => {
             let game;
 
             game = new TicTacToe();
@@ -2215,6 +2229,29 @@ describe('TicTacToe', () => {
         });
     });
     describe('#getWinner', () => {
+        it('should return null when no winner: 1st turn', () => {
+            const game = new TicTacToe();
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+        });
+
+        it('should return null when no winner: 2nd turn', () => {
+            const game = new TicTacToe();
+            game.nextTurn(1, 0);
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+        });
+
+        it('should return X after win-line', () => {
+            const game = new TicTacToe();
+            game.nextTurn(1, 0);
+            game.nextTurn(2, 0);
+            game.nextTurn(1, 1);
+            game.nextTurn(2, 1);
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal('x');
+        });
+
         it('should return winner of the game or null', () => {
             let game;
 
@@ -2862,7 +2899,6 @@ describe('TicTacToe', () => {
             game.nextTurn(1, 2);
             game.nextTurn(2, 0);
             game.nextTurn(2, 1);
-            expect(game.isFinished()).to.equal(false);
             game.nextTurn(2, 2);
             expect(game.isFinished()).to.equal(true);
         });
