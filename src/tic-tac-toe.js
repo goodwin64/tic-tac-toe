@@ -33,30 +33,11 @@ class TicTacToe {
             ? SECOND_PLAYER_CHARACTER
             : FIRST_PLAYER_CHARACTER;
 
-        const isEdgeRow = rowIndex > 0 && rowIndex < gamepad.length - 1;
-        const isHorizontalMatch =
-            currChar === gamepad[rowIndex][columnIndex - 1] &&
-            currChar === gamepad[rowIndex][columnIndex + 1];
-        const isVerticalMatch =
-            isEdgeRow &&
-            currChar === gamepad[rowIndex - 1][columnIndex] &&
-            currChar === gamepad[rowIndex + 1][columnIndex];
-        const isDiagonalMatch =
-            isEdgeRow && (
-                currChar === gamepad[rowIndex - 1][columnIndex - 1] &&
-                currChar === gamepad[rowIndex + 1][columnIndex + 1]
-                ||
-                currChar === gamepad[rowIndex - 1][columnIndex + 1] &&
-                currChar === gamepad[rowIndex + 1][columnIndex - 1]
-            );
-        if (PLAYERS_CHARACTERS.includes(currChar) &&
-            (isHorizontalMatch || isVerticalMatch || isDiagonalMatch)) {
-            this.winner = currChar;
-        }
+        this.findWinLinesAndUpdateStatus();
     }
 
     isFinished() {
-        return this.getWinner() || this.isDraw() || this.noMoreTurns();
+        return Boolean(this.getWinner() || this.isDraw());
     }
 
     getWinner() {
@@ -73,6 +54,35 @@ class TicTacToe {
 
     getFieldValue(rowIndex, columnIndex) {
         return this.gamepad[rowIndex][columnIndex];
+    }
+
+    findWinLinesAndUpdateStatus() {
+        const { gamepad } = this;
+
+        gamepad.forEach((row, rowIndex) => {
+            const isEdgeRow = rowIndex === 0 || rowIndex === gamepad.length - 1;
+            row.forEach((currChar, columnIndex) => {
+                const isHorizontalMatch =
+                    currChar === gamepad[rowIndex][columnIndex - 1] &&
+                    currChar === gamepad[rowIndex][columnIndex + 1];
+                const isVerticalMatch =
+                    !isEdgeRow &&
+                    currChar === gamepad[rowIndex - 1][columnIndex] &&
+                    currChar === gamepad[rowIndex + 1][columnIndex];
+                const isDiagonalMatch =
+                    !isEdgeRow && (
+                        currChar === gamepad[rowIndex - 1][columnIndex - 1] &&
+                        currChar === gamepad[rowIndex + 1][columnIndex + 1]
+                        ||
+                        currChar === gamepad[rowIndex - 1][columnIndex + 1] &&
+                        currChar === gamepad[rowIndex + 1][columnIndex - 1]
+                    );
+                if (PLAYERS_CHARACTERS.includes(currChar) &&
+                    (isHorizontalMatch || isVerticalMatch || isDiagonalMatch)) {
+                    this.winner = currChar;
+                }
+            })
+        })
     }
 }
 
