@@ -1,4 +1,11 @@
 const TicTacToe = require('../src/tic-tac-toe.js');
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+
+global.expect = chai.expect;
+global.sinon = sinon;
+chai.use(sinonChai);
 
 describe('TicTacToe', () => {
     describe('#getCurrentPlayerSymbol', () => {
@@ -6,564 +13,564 @@ describe('TicTacToe', () => {
             let game;
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
-
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
             game = new TicTacToe();
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game = new TicTacToe();
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game = new TicTacToe();
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
+            game = new TicTacToe();
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(2, 0);
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+
+            game.nextTurn(1, 2);
             expect(game.getCurrentPlayerSymbol()).to.equal('o')
         });
     });
@@ -572,610 +579,610 @@ describe('TicTacToe', () => {
             let game;
 
             game = new TicTacToe();
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-
-
-            game = new TicTacToe();
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 0)).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game = new TicTacToe();
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal('x')
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
-
-
-            game = new TicTacToe();
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 0)).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 1)).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getFieldValue(1, 0)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 2)).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal('o')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
 
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('o');
 
-            game = new TicTacToe();
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 2)).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getFieldValue(2, 0)).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal('o')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 2)).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(1, 1)).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getFieldValue(2, 1)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getFieldValue(0, 2)).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getFieldValue(0, 1)).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getFieldValue(2, 2)).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getFieldValue(0, 0)).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.getFieldValue(2, 0)).to.equal('x')
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+
+
+            game = new TicTacToe();
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+
+
+            game = new TicTacToe();
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getFieldValue(1, 0)).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+
+            game = new TicTacToe();
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 2)).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+
+
+            game = new TicTacToe();
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+
+            game.nextTurn(1, 2);
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getFieldValue(2, 0)).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(1, 1)).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getFieldValue(2, 1)).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+
+            game.nextTurn(0, 2);
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+
+            game.nextTurn(1, 1);
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+
+            game.nextTurn(2, 1);
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getFieldValue(0, 1)).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+
+            game.nextTurn(2, 2);
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+
+            game.nextTurn(2, 0);
+            expect(game.getFieldValue(2, 0)).to.equal('x');
             expect(game.getFieldValue(1, 2)).to.equal('o')
 
         });
@@ -2201,628 +2208,628 @@ describe('TicTacToe', () => {
             let game;
 
             game = new TicTacToe();
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal('o')
-
-
-            game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game = new TicTacToe();
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game = new TicTacToe();
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 2)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
-
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 0)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(0, 2)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(1, 1)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
 
-            game.nextTurn(2, 0)
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal('x');
+
+
+            game = new TicTacToe();
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+
+            game = new TicTacToe();
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal('x');
+
+
+            game = new TicTacToe();
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 0);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(0, 2);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(1, 1);
+            expect(game.getWinner()).to.equal(null);
+
+            game.nextTurn(2, 0);
             expect(game.getWinner()).to.equal('x')
 
         });
@@ -2832,574 +2839,574 @@ describe('TicTacToe', () => {
             let game;
 
             game = new TicTacToe();
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(true)
-
-
-            game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game = new TicTacToe();
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-
-            game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(true)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(true);
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(true);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game = new TicTacToe();
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
 
-            game.nextTurn(0, 2)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(true);
+
+
+            game = new TicTacToe();
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(true);
+
+
+            game = new TicTacToe();
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+
+            game.nextTurn(0, 2);
             expect(game.isFinished()).to.equal(true)
 
         });
@@ -3409,1326 +3416,1326 @@ describe('TicTacToe', () => {
             let game;
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('o');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(true);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(true);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('o');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(true);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('o')
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('o');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
 
             game = new TicTacToe();
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(2, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(true);
             expect(game.isDraw()).to.equal(true);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
 
             game = new TicTacToe();
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(1, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 1)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 1)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 1)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 1)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 1)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(0, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(1, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 2)).to.equal('x')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(1, 2)).to.equal('x');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(0, 0)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(0, 0);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(0, 0)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('o')
+            expect(game.getFieldValue(0, 0)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
 
-            game.nextTurn(2, 2)
-            expect(game.isFinished()).to.equal(false)
-            expect(game.getWinner()).to.equal(null)
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(false);
+            expect(game.getWinner()).to.equal(null);
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(2, 2)).to.equal('o')
-            expect(game.getCurrentPlayerSymbol()).to.equal('x')
+            expect(game.getFieldValue(2, 2)).to.equal('o');
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
 
-            game.nextTurn(1, 0)
-            expect(game.isFinished()).to.equal(true)
-            expect(game.getWinner()).to.equal('x')
+            game.nextTurn(1, 0);
+            expect(game.isFinished()).to.equal(true);
+            expect(game.getWinner()).to.equal('x');
             expect(game.noMoreTurns()).to.equal(false);
             expect(game.isDraw()).to.equal(false);
-            expect(game.getFieldValue(1, 0)).to.equal('x')
+            expect(game.getFieldValue(1, 0)).to.equal('x');
             expect(game.getCurrentPlayerSymbol()).to.equal('o')
 
         });
