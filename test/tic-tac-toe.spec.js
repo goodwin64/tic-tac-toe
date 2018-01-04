@@ -9,6 +9,17 @@ chai.use(sinonChai);
 
 describe('TicTacToe', () => {
     describe('#getCurrentPlayerSymbol', () => {
+        it('should return correct player symbol before any turns', () => {
+            const game = new TicTacToe();
+            expect(game.getCurrentPlayerSymbol()).to.equal('x');
+        });
+
+        it('should return correct player symbol after 1st turn', () => {
+            const game = new TicTacToe();
+            game.nextTurn(0, 1);
+            expect(game.getCurrentPlayerSymbol()).to.equal('o');
+        });
+
         it('should return correct player symbol', () => {
             let game;
 
@@ -2835,6 +2846,27 @@ describe('TicTacToe', () => {
         });
     });
     describe('#isFinished', () => {
+        it('should not declare game as finished after 1st turn', () => {
+            const game = new TicTacToe();
+            game.nextTurn(0, 1);
+            expect(game.isFinished()).to.equal(false);
+        });
+
+        it('should declare game as finished after last turn', () => {
+            const game = new TicTacToe();
+            game.nextTurn(0, 0);
+            game.nextTurn(0, 1);
+            game.nextTurn(0, 2);
+            game.nextTurn(1, 0);
+            game.nextTurn(1, 1);
+            game.nextTurn(1, 2);
+            game.nextTurn(2, 0);
+            game.nextTurn(2, 1);
+            expect(game.isFinished()).to.equal(false);
+            game.nextTurn(2, 2);
+            expect(game.isFinished()).to.equal(true);
+        });
+
         it('should return winner of the game or null', () => {
             let game;
 
